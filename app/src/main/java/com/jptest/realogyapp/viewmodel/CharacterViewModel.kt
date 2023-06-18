@@ -1,7 +1,5 @@
 package com.jptest.realogyapp.viewmodel
 
-import android.content.ContentValues.TAG
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -26,13 +24,11 @@ class CharacterViewModel @Inject constructor(private val repository: CharacterRe
     }
 
     private fun fetchSat() {
-       // _character.postValue((Response.Loading()))
+        _character.postValue((Response.Loading()))
         viewModelScope.launch {
             try {
                 _character.postValue((Response.Success(repository.getCharacters())))
-                Log.e("--------------------------", "fetchSat: "+repository.getCharacters() )
             } catch (e: Exception) {
-                Log.e(TAG, "fetchSat: "+repository.getCharacters().toString() )
                 _character.postValue((e.message?.let { Response.Error(it) }))
             }
         }

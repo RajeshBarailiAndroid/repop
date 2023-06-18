@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun loadUI() {
       viewModel.character.observe(this){
-          Log.e(TAG, "loadUI: ------------"+it.data)
+
           when (it) {
 
               is Response.Loading -> {

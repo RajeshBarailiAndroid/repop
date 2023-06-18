@@ -12,7 +12,6 @@ class CharacterRepository @Inject constructor(
     private val apiService: ApiService, @Named("parameter_string") val params: String
 ) {
     suspend fun getCharacters(): Characters {
-        Log.e("TAG", "getCharacters: ---------"+apiService.getCharacters(params) )
-        return apiService.getCharacters("simpsons characters")
+          return apiService.getCharacters(params)
     }
 }
