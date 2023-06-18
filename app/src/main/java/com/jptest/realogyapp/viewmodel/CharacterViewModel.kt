@@ -26,7 +26,7 @@ class CharacterViewModel @Inject constructor(private val repository: CharacterRe
     }
 
     private fun fetchSat() {
-        _character.postValue((Response.Loading()))
+       // _character.postValue((Response.Loading()))
         viewModelScope.launch {
             try {
                 _character.postValue((Response.Success(repository.getCharacters())))

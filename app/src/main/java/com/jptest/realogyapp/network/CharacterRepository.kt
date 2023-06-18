@@ -13,6 +13,6 @@ class CharacterRepository @Inject constructor(
 ) {
     suspend fun getCharacters(): Characters {
         Log.e("TAG", "getCharacters: ---------"+apiService.getCharacters(params) )
-        return apiService.getCharacters(params)
+        return apiService.getCharacters("simpsons characters")
     }
 }

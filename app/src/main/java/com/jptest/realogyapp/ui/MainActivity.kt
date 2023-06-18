@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-       // setUI()
+       setUI()
         loadUI()
     }
 
@@ -40,58 +40,58 @@ class MainActivity : AppCompatActivity() {
           Log.e(TAG, "loadUI: ------------"+it.data)
           when (it) {
 
-//              is Response.Loading -> {
-//                  load?.visibility = View.VISIBLE
-//                  recyclerView.visibility = View.GONE
-//                  error?.visibility = View.GONE
-//              }
-//
-//              is Response.Success -> {
-//                  load?.visibility = View.GONE
-//                  error?.visibility = View.GONE
-//                  recyclerView.visibility = View.VISIBLE
-//                  loadData(it)
-//              }
-//
-//              is Response.Error -> {
-//                  error?.visibility = View.VISIBLE
-//                  recyclerView.visibility = View.GONE
-//                  load?.visibility = View.GONE
+              is Response.Loading -> {
+                  load?.visibility = View.VISIBLE
+                  recyclerView.visibility = View.GONE
+                  error?.visibility = View.GONE
+              }
+
+              is Response.Success -> {
+                  load?.visibility = View.GONE
+                  error?.visibility = View.GONE
+                  recyclerView.visibility = View.VISIBLE
+                  loadData(it)
+              }
+
+              is Response.Error -> {
+                  error?.visibility = View.VISIBLE
+                  recyclerView.visibility = View.GONE
+                  load?.visibility = View.GONE
               }
           }
       }
     }
 
-//    private fun setUI() {
-//        recyclerView = findViewById(R.id.recyclerview_id)
-//        load = findViewById(R.id.load)
-//        error = findViewById(R.id.error_msg)
-//        search = findViewById(R.id.search)
-//        search.clearFocus()
-//        this.recyclerView.layoutManager = LinearLayoutManager(applicationContext)
-//      this.characterAdapter.also { this.recyclerView.adapter = it }
-//    }
-//
-//    private fun loadData(it: Response<Characters>) {
-//        var data = it.data?.RelatedTopics
-//        data?.sortedBy { it.Text }
-//        search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-//            override fun onQueryTextSubmit(query: String?): Boolean {
-//                // Handle search query submission
-//                return true
-//            }
-//
-//            override fun onQueryTextChange(newText: String?): Boolean {
-//                val filterData = data?.filter { it.Result.contains(newText.toString(), true) }
-//                if (filterData != null) {
-//                    characterAdapter.setData(filterData)
-//                }
-//                return true
-//            }
-//        })
-//        if (data != null) {
-//            characterAdapter.setData(data)
-//        }
-//    }
+    private fun setUI() {
+        recyclerView = findViewById(R.id.recyclerview_id)
+        load = findViewById(R.id.load)
+        error = findViewById(R.id.error_msg)
+        search = findViewById(R.id.search)
+        search.clearFocus()
+        this.recyclerView.layoutManager = LinearLayoutManager(applicationContext)
+      this.characterAdapter.also { this.recyclerView.adapter = it }
+    }
+
+    private fun loadData(it: Response<Characters>) {
+        var data = it.data?.RelatedTopics
+        data?.sortedBy { it.Text }
+        search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                // Handle search query submission
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                val filterData = data?.filter { it.Result.contains(newText.toString(), true) }
+                if (filterData != null) {
+                    characterAdapter.setData(filterData)
+                }
+                return true
+            }
+        })
+        if (data != null) {
+            characterAdapter.setData(data)
+        }
+    }
     //var ss=BuildConfig.
-//}
+}
