@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <fragment
-        android:id="@+id/fragmentA"
+        android:id="@+id/fragmentList"
         android:name="com.jptest.realogyapp.ui.FragmentList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

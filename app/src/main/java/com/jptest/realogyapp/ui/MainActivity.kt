@@ -4,31 +4,38 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.jptest.realogyapp.R
+import com.jptest.realogyapp.viewmodel.SharedViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity(),MyCommunicator {
+class MainActivity : AppCompatActivity(){
     private var mIsDualPane = false
+
+         var viewModel=SharedViewModel()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-      val fragmentBView = findViewById<View>(R.id.fragmentB)
-       mIsDualPane = fragmentBView?.visibility == View.VISIBLE
-
+viewModel=ViewModelProvider(this)[SharedViewModel::class.java]
+      val fragmentDetailsView = findViewById<View>(R.id.fragmentDetails)
+       mIsDualPane = fragmentDetailsView?.visibility == View.VISIBLE
+setUi()
     }
 
-    override fun displayDetails(title: String, imageUrl: Any, description: String) {
+    private fun setUi() {
+        viewModel.details.observe(this){
+            if (mIsDualPane) { // If we are in Tablet
 
-        if (mIsDualPane) { // If we are in Tablet
-            val fragmentB = supportFragmentManager.findFragmentById(R.id.fragmentB) as FragmentDetail?
-            fragmentB?.displayDetails(title, description)
-        } else { // When we are in Smart phone
-            val intent = Intent(this, DetailActivity::class.java)
-            intent.putExtra("title", title)
-            intent.putExtra("description", description)
-            startActivity(intent)
+            } else { // When we are in Smart phone
+
+                val intent = Intent(this, DetailActivity::class.java)
+
+                startActivity(intent)
+            }
         }
+
+
     }
+
 }

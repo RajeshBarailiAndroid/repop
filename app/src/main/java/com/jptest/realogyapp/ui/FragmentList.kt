@@ -17,12 +17,14 @@ import com.jptest.realogyapp.model.Characters
 import com.jptest.realogyapp.ui.adapter.CharacterAdapter
 import com.jptest.realogyapp.utils.Response
 import com.jptest.realogyapp.viewmodel.CharacterViewModel
+import com.jptest.realogyapp.viewmodel.SharedViewModel
 
 
 class FragmentList : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
     //private lateinit var search: SearchView
+    var shareViewModel=SharedViewModel()
     var adapter=CharacterAdapter()
     var load: ProgressBar? = null
     var error: TextView? = null
@@ -34,7 +36,7 @@ class FragmentList : Fragment() {
 
         val rootView = inflater.inflate(R.layout.fragment_list, container, false)
         var viewModel = ViewModelProvider(requireActivity())[CharacterViewModel::class.java]
-
+        shareViewModel = ViewModelProvider(requireActivity())[SharedViewModel::class.java]
         loadUI(viewModel)
         setUI(rootView)
         return rootView
@@ -100,7 +102,7 @@ class FragmentList : Fragment() {
 //            }
 //        })
         if (data != null) {
-            adapter?.setData(data,context)
+            adapter?.setData(data,context,shareViewModel)
         }
     }
 }
