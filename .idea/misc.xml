@@ -3,14 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/rajes/AndroidStudioProjects/RealogyApp/app/src/main/res/layout-sw600dp/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/rajes/AndroidStudioProjects/RealogyApp/app/src/main/res/layout-w600dp-land/activity_list.xml" value="0.13651181744091279" />
         <entry key="..\:/Users/rajes/AndroidStudioProjects/RealogyApp/app/src/main/res/layout-w600dp-land/activity_listfr.xml" value="0.13651181744091279" />
         <entry key="..\:/Users/rajes/AndroidStudioProjects/RealogyApp/app/src/main/res/layout-w600dp-land/activity_main.xml" value="0.13651181744091279" />
         <entry key="..\:/Users/rajes/AndroidStudioProjects/RealogyApp/app/src/main/res/layout-w600dp/activity_listfr.xml" value="0.10499174917491749" />
         <entry key="..\:/Users/rajes/AndroidStudioProjects/RealogyApp/app/src/main/res/layout-w600dp/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/rajes/AndroidStudioProjects/RealogyApp/app/src/main/res/layout/a.xml" value="0.3489583333333333" />
-        <entry key="..\:/Users/rajes/AndroidStudioProjects/RealogyApp/app/src/main/res/layout/activity_detail.xml" value="0.3489583333333333" />
-        <entry key="..\:/Users/rajes/AndroidStudioProjects/RealogyApp/app/src/main/res/layout/activity_list.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/rajes/AndroidStudioProjects/RealogyApp/app/src/main/res/layout/activity_detail.xml" value="0.1" />
+        <entry key="..\:/Users/rajes/AndroidStudioProjects/RealogyApp/app/src/main/res/layout/activity_list.xml" value="0.13365155131264916" />
         <entry key="..\:/Users/rajes/AndroidStudioProjects/RealogyApp/app/src/main/res/layout/activity_listfr.xml" value="0.17447916666666666" />
         <entry key="..\:/Users/rajes/AndroidStudioProjects/RealogyApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/rajes/AndroidStudioProjects/RealogyApp/app/src/main/res/layout/b.xml" value="0.3489583333333333" />
@@ -18,6 +19,8 @@
         <entry key="..\:/Users/rajes/AndroidStudioProjects/RealogyApp/app/src/main/res/layout/d.xml" value="0.3489583333333333" />
         <entry key="..\:/Users/rajes/AndroidStudioProjects/RealogyApp/app/src/main/res/layout/detail_view.xml" value="0.11056105610561057" />
         <entry key="..\:/Users/rajes/AndroidStudioProjects/RealogyApp/app/src/main/res/layout/fragment_blank.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/rajes/AndroidStudioProjects/RealogyApp/app/src/main/res/layout/fragment_detail.xml" value="0.17213541666666668" />
+        <entry key="..\:/Users/rajes/AndroidStudioProjects/RealogyApp/app/src/main/res/layout/fragment_list.xml" value="0.17213541666666668" />
         <entry key="..\:/Users/rajes/AndroidStudioProjects/RealogyApp/app/src/main/res/layout/layout.xml" value="0.17213541666666668" />
       </map>
     </option>

@@ -1,97 +1,49 @@
 package com.jptest.realogyapp.ui
 
-import android.content.ContentValues.TAG
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.ProgressBar
-import android.widget.TextView
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.SearchView
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.jptest.realogyapp.R
-import com.jptest.realogyapp.model.Characters
-import com.jptest.realogyapp.ui.adapter.CharacterAdapter
-import com.jptest.realogyapp.utils.Response
-import com.jptest.realogyapp.viewmodel.CharacterViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
-    private val viewModel: CharacterViewModel by viewModels()
+class MainActivity : AppCompatActivity(),MyCommunicator {
 
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var search: SearchView
-  //  private lateinit var dataViewModel: SimpsonsViewModel
-    var load: ProgressBar? = null
-    var error: TextView? = null
-   private var characterAdapter = CharacterAdapter()
+    private var mIsDualPane = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-       setUI()
-        loadUI()
+
+      val fragmentBView = findViewById<View>(R.id.fragmentB)
+       mIsDualPane = fragmentBView?.visibility == View.VISIBLE
+
+//        val fragmentManager = supportFragmentManager
+//        val fragmentTransaction = fragmentManager.beginTransaction()
+//var examplefragment=FragmentList()
+//        // Replace the existing fragment container with the new fragment
+//        fragmentTransaction.replace(R.id.fragmentA, examplefragment)
+//
+//        // Add the new fragment on top of the existing fragment (if you want to keep the existing fragment in the back stack)
+//        // fragmentTransaction.add(R.id.fragment_container, exampleFragment)
+//
+//        fragmentTransaction.commit()
     }
 
-    private fun loadUI() {
-      viewModel.character.observe(this){
-
-          when (it) {
-
-              is Response.Loading -> {
-                  load?.visibility = View.VISIBLE
-                  recyclerView.visibility = View.GONE
-                  error?.visibility = View.GONE
-              }
-
-              is Response.Success -> {
-                  load?.visibility = View.GONE
-                  error?.visibility = View.GONE
-                  recyclerView.visibility = View.VISIBLE
-                  loadData(it)
-              }
-
-              is Response.Error -> {
-                  error?.visibility = View.VISIBLE
-                  recyclerView.visibility = View.GONE
-                  load?.visibility = View.GONE
-              }
-          }
-      }
+    override fun displayDetails(title: String, imageUrl: Any, description: String) {
     }
 
-    private fun setUI() {
-        recyclerView = findViewById(R.id.recyclerview_id)
-        load = findViewById(R.id.load)
-        error = findViewById(R.id.error_msg)
-        search = findViewById(R.id.search)
-        search.clearFocus()
-        this.recyclerView.layoutManager = LinearLayoutManager(applicationContext)
-      this.characterAdapter.also { this.recyclerView.adapter = it }
-    }
-
-    private fun loadData(it: Response<Characters>) {
-        var data = it.data?.RelatedTopics
-        data?.sortedBy { it.Text }
-        search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                // Handle search query submission
-                return true
-            }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-                val filterData = data?.filter { it.Result.contains(newText.toString(), true) }
-                if (filterData != null) {
-                    characterAdapter.setData(filterData)
-                }
-                return true
-            }
-        })
-        if (data != null) {
-            characterAdapter.setData(data)
-        }
-    }
-    //var ss=BuildConfig.
+//    override fun displayDetails(title: String, imageUrl: Any, description: String) {
+//
+//        if (mIsDualPane) { // If we are in Tablet
+//            val fragmentB = supportFragmentManager.findFragmentById(R.id.fragmentB) as FragmentDetail?
+//            fragmentB?.displayDetails(title, description)
+//        } else { // When we are in Smart phone
+//            val intent = Intent(this, DetailActivity::class.java)
+//            intent.putExtra("title", title)
+//            intent.putExtra("description", description)
+//            startActivity(intent)
+//        }
+//    }
 }

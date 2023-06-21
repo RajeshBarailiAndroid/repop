@@ -6,11 +6,11 @@
     android:layout_height="match_parent">
 
     <fragment
-        android:id="@+id/fragmentA"
-        android:name="com.jptest.realogyapp.ui.FragmentList"
+        android:id="@+id/fragment_detail_view"
+        android:name="com.jptest.realogyapp.ui.FragmentDetail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout="@layout/fragment_list"
+        tools:layout="@layout/fragment_detail"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
