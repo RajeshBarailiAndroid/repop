@@ -1,6 +1,8 @@
 package com.jptest.realogyapp.ui
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.jptest.realogyapp.R
 import com.jptest.realogyapp.model.Characters
+import com.jptest.realogyapp.model.RelatedTopics
 import com.jptest.realogyapp.ui.adapter.CharacterAdapter
 import com.jptest.realogyapp.utils.Response
 import com.jptest.realogyapp.viewmodel.CharacterViewModel
@@ -23,7 +26,7 @@ import com.jptest.realogyapp.viewmodel.SharedViewModel
 class FragmentList : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
-     private lateinit var search: SearchView
+    private lateinit var search: SearchView
     var shareViewModel = SharedViewModel()
     var adapter = CharacterAdapter()
     var load: ProgressBar? = null
@@ -74,7 +77,7 @@ class FragmentList : Fragment() {
         load = rootView.findViewById(R.id.load)
         error = rootView.findViewById(R.id.error_msg)
         search = rootView.findViewById(R.id.search_text)
-       search?.clearFocus()
+        search.clearFocus()
         val recyclerView = rootView.findViewById(R.id.recyclerview_id) as RecyclerView
         recyclerView.adapter = adapter
         val manager = LinearLayoutManager(activity)
@@ -86,22 +89,30 @@ class FragmentList : Fragment() {
         var data = it.data?.RelatedTopics
         data?.sortedBy { it.Text }
 
-        search?.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+        search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            var filterData = listOf<RelatedTopics>()
             override fun onQueryTextSubmit(query: String?): Boolean {
                 // Handle search query submission
-                return true
+                if (!query.isNullOrEmpty()) {
+                    filterData = data?.filter { it.Result.contains(query.toString(), true) }!!
+                    return false
+                }
+                return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
 
-                val filterData = data?.filter { it.Result.contains(newText.toString(), true) }
+                filterData = data?.filter { it.Result.contains(newText.toString(), true) }!!
+
                 if (filterData != null && data != null) {
-                    adapter.setData(data, context, shareViewModel)
+                    Log.e(TAG, "onQueryTextChange: " + filterData.size)
+                    adapter.setData(filterData, context, shareViewModel)
 
                 }
                 return true
             }
         })
+
         if (data != null) {
             adapter.setData(data, context, shareViewModel)
         }
