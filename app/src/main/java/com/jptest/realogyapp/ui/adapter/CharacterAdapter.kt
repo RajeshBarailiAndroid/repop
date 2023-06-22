@@ -6,10 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.jptest.realogyapp.R
 import com.jptest.realogyapp.model.RelatedTopics
 import com.jptest.realogyapp.viewmodel.SharedViewModel
@@ -40,11 +38,8 @@ var viewModel:SharedViewModel?=null
         val name = nameLong.first()
         // Set the text and image for the views
         holder.text.text = name
-        // Set the click listener for the arrow view
         holder.arrow.setOnClickListener { view ->
         viewModel?.set(current)
-          //  val myCommunicator = context as MyCommunicator
-        //  myCommunicator.displayDetails(current)
       }
 
     }

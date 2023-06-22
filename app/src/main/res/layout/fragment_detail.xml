@@ -21,6 +21,8 @@
 				android:id="@+id/name_view"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
+				android:textSize="30sp"
+				android:textStyle="bold"
 				android:text="John"
 				android:gravity="center"
 				android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -30,9 +32,9 @@
 				android:id="@+id/detail_view"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:text="hhhhhhhhhhhhhhhhhhhhhhhhhhhhh"
+				android:text=""
 				android:textStyle="italic"
-				android:textSize="19sp"
+				android:textSize="21sp"
 				android:padding="16dp" />
 		</LinearLayout>
 	</ScrollView>

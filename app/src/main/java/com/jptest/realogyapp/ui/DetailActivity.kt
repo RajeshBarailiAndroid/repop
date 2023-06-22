@@ -16,8 +16,6 @@ var viewModel=SharedViewModel()
         var detail = intent.getStringExtra("description")
         var image = intent.getStringExtra("image")
         var name = intent.getStringExtra("name")
-
-        // Pass the data to FragmentB to display it
         val fragmentB = supportFragmentManager.findFragmentById(R.id.fragmentDetails) as FragmentDetail?
         detail=detail?:""
         image=image?:""
@@ -25,9 +23,6 @@ var viewModel=SharedViewModel()
         fragmentB?.displayDetails(name,image,detail)
 
      }
-
-        // Pass the data to fragmentDetails to display it
-
-        }
+}
 
 
