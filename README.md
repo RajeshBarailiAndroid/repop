@@ -9,4 +9,4 @@
 
 ## phone Screen
 
-![Screenshot_20230622_005008](https://github.com/RajeshBarailiAndroid/repop/assets/132971209/177ce44e-e63a-4a82-b310-26e8d0638086)
+<img src="![Screenshot_20230622_005008](https://github.com/RajeshBarailiAndroid/repop/assets/132971209/177ce44e-e63a-4a82-b310-26e8d0638086)" width="300">
