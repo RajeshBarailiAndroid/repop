@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/rajes/AndroidStudioProjects/RealogyApp/app/src/main/res/layout-land/fragment_detail.xml" value="0.13467807660961695" />
         <entry key="..\:/Users/rajes/AndroidStudioProjects/RealogyApp/app/src/main/res/layout-sw600dp-land/activity_main.xml" value="0.13467807660961695" />
         <entry key="..\:/Users/rajes/AndroidStudioProjects/RealogyApp/app/src/main/res/layout-sw600dp/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/rajes/AndroidStudioProjects/RealogyApp/app/src/main/res/layout-sw600dp/card_layout.xml" value="0.17213541666666668" />
+        <entry key="..\:/Users/rajes/AndroidStudioProjects/RealogyApp/app/src/main/res/layout-sw600dp/fragment_detail.xml" value="0.17213541666666668" />
         <entry key="..\:/Users/rajes/AndroidStudioProjects/RealogyApp/app/src/main/res/layout-w600dp-land/activity_list.xml" value="0.13651181744091279" />
         <entry key="..\:/Users/rajes/AndroidStudioProjects/RealogyApp/app/src/main/res/layout-w600dp-land/activity_listfr.xml" value="0.13651181744091279" />
         <entry key="..\:/Users/rajes/AndroidStudioProjects/RealogyApp/app/src/main/res/layout-w600dp-land/activity_main.xml" value="0.13651181744091279" />

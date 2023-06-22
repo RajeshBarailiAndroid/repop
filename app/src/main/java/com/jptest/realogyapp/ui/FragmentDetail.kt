@@ -53,10 +53,6 @@ class FragmentDetail : Fragment() {
             "https://duckduckgo.com$image"
         }
         imageView?.let { Glide.with(requireActivity()).load(imageUrl).into(it) }
-        if (isTablet){
-          titleView?.textSize=38f
-            detailView?.textSize=28f
-        }
         titleView?.text = name
         detailView?.text = detail
 

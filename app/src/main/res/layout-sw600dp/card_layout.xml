@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:text="Title"
             android:textColor="#616161"
-            android:textSize="18sp" />
+            android:textSize="32sp" />
 
         <ImageView
             android:id="@+id/arrowImageView"
