@@ -1,8 +1,9 @@
-Android MVVM Compose
-Features
-Used MVVM Architecture
-Used Jetpack Compose UI
-Used Kotlin And Coroutine
-Used Mockk for unit testing and Comspose Ui testing for UI
-Used Hilt for Dependency Injection
-Light Mode
+# Android MVVM supports multi-screens and multi-variants
+
+## Features
+#### used flavors and multi-variants
+#### Used MVVM Architecture
+#### Used Kotlin And Coroutine
+#### Used Mockk for unit testing and Espresso for Ui testing
+#### Used Hilt for Dependency Injection
+
