@@ -9,5 +9,4 @@
 
 ## phone Screen
 
-<img src="https://imgur.com/a/45B0KPx" width="300"> 
 
