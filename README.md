@@ -7,3 +7,7 @@
 #### Used Mockk for unit testing and Espresso for Ui testing
 #### Used Hilt for Dependency Injection
 
+## phone Screen
+
+<img src="https://imgur.com/a/45B0KPx.png" width="300"> 
+
